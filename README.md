@@ -1,12 +1,11 @@
-<<<<<<< HEAD
-# Runtime Transform Gizmo System (Unreal Engine 5)
+# Runtime Transform Gizmo System (Unreal Engine 4.27)
 
 ## 📌 Overview
 This project implements a **runtime transform gizmo system** in Unreal Engine using C++.  
-It allows users to select and move actors during gameplay, similar to the Unreal Editor transform tool.
+It allows selecting actors and highlighting selected actor and moving them with axis and plane constraints during gameplay, including multiplayer support.
 
 The system supports:
-- Single and multi-actor selection
+- Single and multi-actor selection (Ctrl + Click support)
 - Axis and plane constrained movement
 - Group pivot calculation
 - Visual highlighting
@@ -20,7 +19,7 @@ The system supports:
 - Mouse-based selection using `GetHitResultUnderCursor`
 - Ctrl + Click for multi-selection
 - Toggle selection support
-- Dynamic material highlighting using `UMaterialInstanceDynamic`
+- Auto destroy/spawn gizmo
 
 ### 🔧 Runtime Gizmo
 - Custom transform gizmo spawned at runtime
@@ -37,8 +36,13 @@ The system supports:
 
 ### 🌐 Multiplayer Support
 - Server-authoritative actor movement
-- RPC-based transform synchronization
-- Reduced jitter using movement tolerance checks
+- RPC: Server_MoveActors
+- Syncs actor transforms across clients
+
+### ✨ Highlight Systems
+- Dynamic material highlighting using `UMaterialInstanceDynamic`
+- Controls `HighlightColor`
+- Controls `EmissiveStrength`
 
 ---
 
@@ -63,7 +67,3 @@ The system supports:
 
 ---
 
-
-=======
-# Gizmo
->>>>>>> 6ee4e75daec11993fa0c457ac8241aed1870ee1e
